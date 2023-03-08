@@ -301,7 +301,6 @@
 			isa = PBXGroup;
 			children = (
 				70221F2728D7809800971195 /* MainTabView.swift */,
-				7036E4D2256EBE35006E9A3C /* MainView.swift */,
 				70308878258272CD00FFABB6 /* Care */,
 				7030887D258272F400FFABB6 /* Contact */,
 				7030887E2582731300FFABB6 /* Login */,
@@ -433,10 +432,12 @@
 				918FDEBB271B4E4A0045A0EF /* Calendar+Dates.swift */,
 				918FDEB6271B41FF0045A0EF /* Logger.swift */,
 				70F03A922786087800E5AFB4 /* OCKAnyEvent+CustomStringConvertable.swift */,
+				9169381F271B80EA00A634ED /* CONTRIBUTING.md */,
 				70F03A942786093B00E5AFB4 /* OCKHealthKitPassthroughStore.swift */,
 				70F03AA027860AB700E5AFB4 /* OCKOutcome.swift */,
 				70F03A9E27860A8800E5AFB4 /* OCKOutcomeValue+Identifiable.swift */,
 				70F03AA227860AFF00E5AFB4 /* OCKPatient+Parse.swift */,
+				7036E4D2256EBE35006E9A3C /* MainView.swift */,
 				70F03A962786098F00E5AFB4 /* OCKStore.swift */,
 				70F03A9827860A0800E5AFB4 /* OCKSynchronizedStoreManager+Publishers.swift */,
 				7083A855279CA40A00B3832E /* PCKUtility.swift */,
@@ -493,7 +494,6 @@
 		E72B2BFD226939E3009A9438 = {
 			isa = PBXGroup;
 			children = (
-				9169381F271B80EA00A634ED /* CONTRIBUTING.md */,
 				91AD922324A461D200925D4D /* README.md */,
 				0520468223C3C1F2004F0F36 /* OCKSample.xctestplan */,
 				51431F9723D166AE006A7CFD /* Frameworks */,
@@ -911,7 +911,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = K26KDKYY38;
+				DEVELOPMENT_TEAM = H3259UG9VX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1146,7 +1146,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = K26KDKYY38;
+				DEVELOPMENT_TEAM = H3259UG9VX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
