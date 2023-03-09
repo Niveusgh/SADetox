@@ -17,9 +17,8 @@ struct AppearanceStyle: OCKAppearanceStyler {
     }
     var cornerRadius1: CGFloat { 5 }
     var cornerRadius2: CGFloat { 2 }
-    
-    var borderWidth1: CGFloat { 8 }
 
+    var borderWidth1: CGFloat { 8 }
 
     #endif
 }
