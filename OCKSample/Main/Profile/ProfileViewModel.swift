@@ -13,9 +13,13 @@ import SwiftUI
 import ParseCareKit
 import os.log
 import Combine
+import CareKitUtilities
+import ParseSwift
 
 class ProfileViewModel: ObservableObject {
     // MARK: Public read, private write properties
+
+    // Patient Variables
     @Published private(set) var patient: OCKPatient?
     private(set) var storeManager: OCKSynchronizedStoreManager {
         didSet {

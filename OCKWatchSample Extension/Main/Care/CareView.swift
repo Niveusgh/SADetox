@@ -17,10 +17,10 @@ struct CareView: View {
 
     var body: some View {
         ScrollView {
-            SimpleTaskView(taskID: TaskID.kegels,
+            SimpleTaskView(taskID: TaskID.water,
                            eventQuery: .init(for: Date()),
                            storeManager: appDelegate.storeManager)
-            InstructionsTaskView(taskID: TaskID.stretch,
+            InstructionsTaskView(taskID: TaskID.sleep,
                                  eventQuery: .init(for: Date()),
                                  storeManager: appDelegate.storeManager)
         }.onReceive(appDelegate.$storeManager) { newStoreManager in

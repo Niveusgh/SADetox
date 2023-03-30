@@ -19,6 +19,7 @@ struct ProfileView: View {
     @State var firstName = ""
     @State var lastName = ""
     @State var birthday = Date()
+    @State var isPresentingAddTask = true
 
     var body: some View {
         VStack {
@@ -88,10 +89,19 @@ struct ProfileView: View {
             viewModel.updateStoreManager(newStoreManager)
         }.onReceive(appDelegate.$isFirstTimeLogin) { _ in
             viewModel.updateStoreManager()
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    self.isPresentingAddTask = true
+                }, label: {
+                    Text("Add Task")
+                })
+            }
         }
-    }
-}
 
+    }
+
+}
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView(viewModel: .init(storeManager: Utility.createPreviewStoreManager()),
