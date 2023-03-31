@@ -89,15 +89,15 @@ extension OCKStore {
                                interval: DateComponents(day: 2))
         ])
 
-        var doxylamine = OCKTask(id: TaskID.doxylamine,
-                                 title: "Take Doxylamine",
+        var dinner = OCKTask(id: TaskID.dinner,
+                                 title: "Take dinner",
                                  carePlanUUID: nil,
                                  schedule: schedule)
-        doxylamine.instructions = "Take 25mg (or less) doxylamine when you experience nausea."
-        doxylamine.asset = "pills.fill"
-        doxylamine.card = .button
+        dinner.instructions = "Take 25mg (or less) dinner when you experience lunch."
+        dinner.asset = "pills.fill"
+        dinner.card = .button
 
-        let nauseaSchedule = OCKSchedule(composing: [
+        let lunchSchedule = OCKSchedule(composing: [
             OCKScheduleElement(start: beforeBreakfast,
                                end: nil,
                                interval: DateComponents(day: 1),
@@ -105,13 +105,13 @@ extension OCKStore {
                                targetValues: [], duration: .allDay)
             ])
 
-        var nausea = OCKTask(id: TaskID.nausea,
-                             title: "Track your nausea",
+        var lunch = OCKTask(id: TaskID.recovery,
+                             title: "Track your lunch",
                              carePlanUUID: nil,
-                             schedule: nauseaSchedule)
-        nausea.impactsAdherence = false
-        nausea.instructions = "Tap the button below anytime you experience nausea."
-        nausea.asset = "bed.double"
+                             schedule: lunchSchedule)
+        lunch.impactsAdherence = false
+        lunch.instructions = "Tap the button below anytime you experience lunch."
+        lunch.asset = "bed.double"
 
         let waterElement = OCKScheduleElement(start: beforeBreakfast,
                                               end: nil,
@@ -135,7 +135,7 @@ extension OCKStore {
         sleep.impactsAdherence = true
         sleep.asset = "figure.walk"
 
-        try await addTasksIfNotPresent([nausea, doxylamine, water, sleep])
+        try await addTasksIfNotPresent([lunch, dinner, water, sleep])
 
         var contact1 = OCKContact(id: "jane",
                                   givenName: "Jane",

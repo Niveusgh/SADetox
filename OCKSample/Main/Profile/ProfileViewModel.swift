@@ -20,6 +20,11 @@ class ProfileViewModel: ObservableObject {
     // MARK: Public read, private write properties
 
     // Patient Variables
+
+    @Published var showAddTaskView = false
+    @Published var showDeleteTaskView = false
+    @Published var isPresentingAddTask = false
+
     @Published private(set) var patient: OCKPatient?
     private(set) var storeManager: OCKSynchronizedStoreManager {
         didSet {

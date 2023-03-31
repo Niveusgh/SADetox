@@ -140,6 +140,9 @@ class CareViewController: OCKDailyPageViewController {
                 // Add a non-CareKit view into the list
                 let tipTitle = "Learn more about SAD detox"
                 let tipText = "Learn how WFPD can promote health."
+                let customFeaturedView = CustomFeaturedContentView()
+                // swiftlint:disable:next line_length
+                customFeaturedView.url = URL(string: "https://www.youtube.com/playlist?list=PLp4G6oBUcv8yGQifkb4p_ZOoACPnYslx9")
                 let tipView = TipView()
                 tipView.headerView.titleLabel.text = tipTitle
                 tipView.headerView.detailLabel.text = tipText
@@ -191,6 +194,13 @@ class CareViewController: OCKDailyPageViewController {
 //                storeManager: OCKSynchronizedStoreManager)
 //            return [View.formattedHostingController(),
 //                    linkview.formattedHostingController()]
+        case .custom:
+            let viewModel = CustomCardViewModel(task: task,
+                                                eventQuery: .init(for: date),
+                                                storeManager: self.storeManager)
+            let customCard = CustomCardView(viewModel: viewModel)
+            return [customCard.formattedHostingController()]
+
         case .numericProgress:
             let view = NumericProgressTaskView(
                 task: task,
@@ -214,7 +224,7 @@ class CareViewController: OCKDailyPageViewController {
                                                eventQuery: .init(for: date),
                                                storeManager: self.storeManager)]
 
-        // Create a card for the doxylamine task if there are events for it on this day.
+        // Create a card for the dinner task if there are events for it on this day.
         case .checklist:
 
             return [OCKChecklistTaskViewController(
@@ -225,24 +235,24 @@ class CareViewController: OCKDailyPageViewController {
         case .button:
             var cards = [UIViewController]()
             // dynamic gradient colors
-            let nauseaGradientStart = UIColor { traitCollection -> UIColor in
+            let lunchGradientStart = UIColor { traitCollection -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? #colorLiteral(red: 0.06253327429, green: 0.6597633362, blue: 0.8644603491, alpha: 1) : #colorLiteral(red: 0, green: 0.2858072221, blue: 0.6897063851, alpha: 1)
             }
-            let nauseaGradientEnd = UIColor { traitCollection -> UIColor in
+            let lunchGradientEnd = UIColor { traitCollection -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? #colorLiteral(red: 0, green: 0.2858072221, blue: 0.6897063851, alpha: 1) : #colorLiteral(red: 0.06253327429, green: 0.6597633362, blue: 0.8644603491, alpha: 1)
             }
 
-            // Create a plot comparing nausea to medication adherence.
-            let nauseaDataSeries = OCKDataSeriesConfiguration(
-                taskID: TaskID.nausea,
+            // Create a plot comparing lunch to medication adherence.
+            let lunchDataSeries = OCKDataSeriesConfiguration(
+                taskID: TaskID.recovery,
                 legendTitle: "Lunch",
-                gradientStartColor: nauseaGradientStart,
-                gradientEndColor: nauseaGradientEnd,
+                gradientStartColor: lunchGradientStart,
+                gradientEndColor: lunchGradientEnd,
                 markerSize: 10,
                 eventAggregator: OCKEventAggregator.countOutcomeValues)
 
-            let doxylamineDataSeries = OCKDataSeriesConfiguration(
-                taskID: TaskID.doxylamine,
+            let DinnerDataSeries = OCKDataSeriesConfiguration(
+                taskID: TaskID.sleep,
                 legendTitle: "Dinner",
                 gradientStartColor: .systemGray2,
                 gradientEndColor: .systemGray,
@@ -252,7 +262,7 @@ class CareViewController: OCKDailyPageViewController {
             let insightsCard = OCKCartesianChartViewController(
                 plotType: .bar,
                 selectedDate: date,
-                configurations: [nauseaDataSeries, doxylamineDataSeries],
+                configurations: [lunchDataSeries, DinnerDataSeries],
                 storeManager: self.storeManager)
 
             insightsCard.chartView.headerView.titleLabel.text = "Lunch & Dinner menu"
@@ -265,10 +275,10 @@ class CareViewController: OCKDailyPageViewController {
              The event query passed into the initializer specifies that only
              today's log entries should be displayed by this log task view controller.
              */
-            let nauseaCard = OCKButtonLogTaskViewController(task: task,
+            let lunchCard = OCKButtonLogTaskViewController(task: task,
                                                             eventQuery: .init(for: date),
                                                             storeManager: self.storeManager)
-            cards.append(nauseaCard)
+            cards.append(lunchCard)
             return cards
         case .labeledValue:
             let view = LabeledValueTaskView(

@@ -16,8 +16,8 @@ struct ColorStyler: OCKColorStyler {
         FontColorKey.defaultValue
     }
 
-    var white: UIColor { .blue }
-    var black: UIColor { .red }
-    var clear: UIColor { .cyan }
+    var white: UIColor { .white }
+    var black: UIColor { .black }
+    var clear: UIColor { .clear }
     #endif
 }

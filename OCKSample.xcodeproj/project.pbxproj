@@ -104,6 +104,14 @@
 		E3F2D3AB29D5F82400108399 /* CareKitTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3AA29D5F82400108399 /* CareKitTaskViewModel.swift */; };
 		E3F2D3AD29D5F90F00108399 /* OCKSynchronizedStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3AC29D5F90F00108399 /* OCKSynchronizedStoreManager.swift */; };
 		E3F2D3AE29D5F90F00108399 /* OCKSynchronizedStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3AC29D5F90F00108399 /* OCKSynchronizedStoreManager.swift */; };
+		E3F2D3B329D63D6C00108399 /* CustomFeaturedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3B229D63D6C00108399 /* CustomFeaturedContentView.swift */; };
+		E3F2D3B529D63ED300108399 /* CustomCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3B429D63ED300108399 /* CustomCardViewModel.swift */; };
+		E3F2D3B729D63F7A00108399 /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3B629D63F7A00108399 /* CustomCardView.swift */; };
+		E3F2D3B929D6408900108399 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3B829D6408900108399 /* CardViewModel.swift */; };
+		E3F2D3BB29D648B900108399 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3BA29D648B900108399 /* AddTaskView.swift */; };
+		E3F2D3BD29D648EB00108399 /* AddTaskVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3BC29D648EB00108399 /* AddTaskVIewModel.swift */; };
+		E3F2D3BF29D6491A00108399 /* DeleteTaskVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3BE29D6491A00108399 /* DeleteTaskVIew.swift */; };
+		E3F2D3C129D6493A00108399 /* DeleteTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F2D3C029D6493A00108399 /* DeleteTaskViewModel.swift */; };
 		E72B2C0A226939E3009A9438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B2C09226939E3009A9438 /* AppDelegate.swift */; };
 		E72B2C14226939E4009A9438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72B2C12226939E4009A9438 /* LaunchScreen.storyboard */; };
 		E7440E4F229477F7007AD30A /* CareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7440E4E229477F7007AD30A /* CareViewController.swift */; };
@@ -222,6 +230,14 @@
 		E3F2D3A829D5F78900108399 /* CareKitTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareKitTaskView.swift; sourceTree = "<group>"; };
 		E3F2D3AA29D5F82400108399 /* CareKitTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareKitTaskViewModel.swift; sourceTree = "<group>"; };
 		E3F2D3AC29D5F90F00108399 /* OCKSynchronizedStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCKSynchronizedStoreManager.swift; sourceTree = "<group>"; };
+		E3F2D3B229D63D6C00108399 /* CustomFeaturedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeaturedContentView.swift; sourceTree = "<group>"; };
+		E3F2D3B429D63ED300108399 /* CustomCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardViewModel.swift; sourceTree = "<group>"; };
+		E3F2D3B629D63F7A00108399 /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
+		E3F2D3B829D6408900108399 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		E3F2D3BA29D648B900108399 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		E3F2D3BC29D648EB00108399 /* AddTaskVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskVIewModel.swift; sourceTree = "<group>"; };
+		E3F2D3BE29D6491A00108399 /* DeleteTaskVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTaskVIew.swift; sourceTree = "<group>"; };
+		E3F2D3C029D6493A00108399 /* DeleteTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTaskViewModel.swift; sourceTree = "<group>"; };
 		E72B2C06226939E3009A9438 /* OCKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72B2C09226939E3009A9438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E72B2C13226939E4009A9438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -284,7 +300,10 @@
 		70221F2B28D7C7C600971195 /* CustomCards */ = {
 			isa = PBXGroup;
 			children = (
+				E3F2D3B129D63D0500108399 /* CustomeCard */,
 				E7C37848228F887800E982D8 /* TipView.swift */,
+				E3F2D3B229D63D6C00108399 /* CustomFeaturedContentView.swift */,
+				E3F2D3B829D6408900108399 /* CardViewModel.swift */,
 			);
 			path = CustomCards;
 			sourceTree = "<group>";
@@ -508,8 +527,21 @@
 			children = (
 				E3F2D3A829D5F78900108399 /* CareKitTaskView.swift */,
 				E3F2D3AA29D5F82400108399 /* CareKitTaskViewModel.swift */,
+				E3F2D3BA29D648B900108399 /* AddTaskView.swift */,
+				E3F2D3BC29D648EB00108399 /* AddTaskVIewModel.swift */,
+				E3F2D3BE29D6491A00108399 /* DeleteTaskVIew.swift */,
+				E3F2D3C029D6493A00108399 /* DeleteTaskViewModel.swift */,
 			);
 			path = CareKitTasks;
+			sourceTree = "<group>";
+		};
+		E3F2D3B129D63D0500108399 /* CustomeCard */ = {
+			isa = PBXGroup;
+			children = (
+				E3F2D3B629D63F7A00108399 /* CustomCardView.swift */,
+				E3F2D3B429D63ED300108399 /* CustomCardViewModel.swift */,
+			);
+			path = CustomeCard;
 			sourceTree = "<group>";
 		};
 		E72B2BFD226939E3009A9438 = {
@@ -797,7 +829,9 @@
 				70F921A827CA9A3A00368CEC /* CustomStylerKey.swift in Sources */,
 				E3F2D3A929D5F78900108399 /* CareKitTaskView.swift in Sources */,
 				E3F2D3A229D5F0C300108399 /* OCKTask.swift in Sources */,
+				E3F2D3BF29D6491A00108399 /* DeleteTaskVIew.swift in Sources */,
 				70221F3428D8ABBE00971195 /* AppDelegate+UIApplicationDelegate.swift in Sources */,
+				E3F2D3B329D63D6C00108399 /* CustomFeaturedContentView.swift in Sources */,
 				9169381D271B650700A634ED /* ColorStyler.swift in Sources */,
 				E72B2C0A226939E3009A9438 /* AppDelegate.swift in Sources */,
 				E3F2D3AB29D5F82400108399 /* CareKitTaskViewModel.swift in Sources */,
@@ -814,11 +848,17 @@
 				918FDEC5271B4EA70045A0EF /* StoreManagerKey.swift in Sources */,
 				91693822271B897200A634ED /* Utility.swift in Sources */,
 				707CC718254DA91900116728 /* OCKLocalization.swift in Sources */,
+				E3F2D3B529D63ED300108399 /* CustomCardViewModel.swift in Sources */,
+				E3F2D3BD29D648EB00108399 /* AddTaskVIewModel.swift in Sources */,
+				E3F2D3B929D6408900108399 /* CardViewModel.swift in Sources */,
 				E7C37849228F887800E982D8 /* TipView.swift in Sources */,
 				E3A8212829BA6B8C00BF0FEB /* DimensionStyler.swift in Sources */,
+				E3F2D3B729D63F7A00108399 /* CustomCardView.swift in Sources */,
+				E3F2D3BB29D648B900108399 /* AddTaskView.swift in Sources */,
 				70077597252228E900EC0EDA /* User.swift in Sources */,
 				7036E4C9256E1A6F006E9A3C /* ProfileView.swift in Sources */,
 				7083A856279CA40A00B3832E /* PCKUtility.swift in Sources */,
+				E3F2D3C129D6493A00108399 /* DeleteTaskViewModel.swift in Sources */,
 				70F921AE27CABE7700368CEC /* RemoteSessionDelegate.swift in Sources */,
 				E3F2D3AD29D5F90F00108399 /* OCKSynchronizedStoreManager.swift in Sources */,
 				70F03A952786093B00E5AFB4 /* OCKHealthKitPassthroughStore.swift in Sources */,
