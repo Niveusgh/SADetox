@@ -185,15 +185,6 @@ class CareViewController: OCKDailyPageViewController {
             return nil
         }
         switch cardView {
-//        case .link:
-//            let linkview = LinkView(title:.init("SAD") , links:
-//                       [.website("www.github.com", title: "Greger")])
-//            let view = NumericProgressTaskView(
-//                task: OCKAnyTask as! OCKAnyTask ,
-//                eventQuery: OCKEventQuery,
-//                storeManager: OCKSynchronizedStoreManager)
-//            return [View.formattedHostingController(),
-//                    linkview.formattedHostingController()]
         case .custom:
             let viewModel = CustomCardViewModel(task: task,
                                                 eventQuery: .init(for: date),
@@ -251,7 +242,7 @@ class CareViewController: OCKDailyPageViewController {
                 markerSize: 10,
                 eventAggregator: OCKEventAggregator.countOutcomeValues)
 
-            let DinnerDataSeries = OCKDataSeriesConfiguration(
+            let dinnerDataSeries = OCKDataSeriesConfiguration(
                 taskID: TaskID.sleep,
                 legendTitle: "Dinner",
                 gradientStartColor: .systemGray2,
@@ -262,7 +253,7 @@ class CareViewController: OCKDailyPageViewController {
             let insightsCard = OCKCartesianChartViewController(
                 plotType: .bar,
                 selectedDate: date,
-                configurations: [lunchDataSeries, DinnerDataSeries],
+                configurations: [lunchDataSeries, dinnerDataSeries],
                 storeManager: self.storeManager)
 
             insightsCard.chartView.headerView.titleLabel.text = "Lunch & Dinner menu"
