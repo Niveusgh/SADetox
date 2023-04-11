@@ -60,8 +60,7 @@ class CareViewController: OCKDailyPageViewController {
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reloadView(_:)),
-                                               // swiftlint:disable:next line_length
-                                               name: Notification.Name(rawValue: Constants.completedFirstSyncAfterLogin),
+                                               name: Notification.Name(rawValue: Constants.shouldRefreshView),
                                                object: nil)
     }
 
@@ -139,8 +138,11 @@ class CareViewController: OCKDailyPageViewController {
         if isCurrentDay {
             if Calendar.current.isDate(date, inSameDayAs: Date()) {
                 // Add a non-CareKit view into the list
-                let tipTitle = "Benefits of exercising"
-                let tipText = "Learn how activity can promote a healthy pregnancy."
+                let tipTitle = "Learn more about SAD detox"
+                let tipText = "Learn how WFPD can promote health."
+                let customFeaturedView = CustomFeaturedContentView()
+                // swiftlint:disable:next line_length
+                customFeaturedView.url = URL(string: "https://www.youtube.com/playlist?list=PLp4G6oBUcv8yGQifkb4p_ZOoACPnYslx9")
                 let tipView = TipView()
                 tipView.headerView.titleLabel.text = tipTitle
                 tipView.headerView.detailLabel.text = tipText
@@ -171,10 +173,26 @@ class CareViewController: OCKDailyPageViewController {
         }
     }
 
+    // swiftlint:disable:next cyclomatic_complexity
     private func taskViewController(for task: OCKAnyTask,
                                     on date: Date) -> [UIViewController]? {
-        switch task.id {
-        case TaskID.steps:
+        let cardView: CareKitCard!
+        if let task = task as? OCKTask {
+            cardView = task.card
+        } else if let task = task as? OCKHealthKitTask {
+            cardView = task.card
+        } else {
+            return nil
+        }
+        switch cardView {
+        case .custom:
+            let viewModel = CustomCardViewModel(task: task,
+                                                eventQuery: .init(for: date),
+                                                storeManager: self.storeManager)
+            let customCard = CustomCardView(viewModel: viewModel)
+            return [customCard.formattedHostingController()]
+
+        case .numericProgress:
             let view = NumericProgressTaskView(
                 task: task,
                 eventQuery: OCKEventQuery(for: date),
@@ -183,50 +201,50 @@ class CareViewController: OCKDailyPageViewController {
                 .careKitStyle(CustomStylerKey.defaultValue)
 
             return [view.formattedHostingController()]
-        case TaskID.stretch:
+        case .instruction:
             return [OCKInstructionsTaskViewController(task: task,
                                                      eventQuery: .init(for: date),
                                                      storeManager: self.storeManager)]
 
-        case TaskID.kegels:
+        case .simple:
             /*
-             Since the kegel task is only scheduled every other day, there will be cases
+             Since the water intake is only scheduled every other day, there will be cases
              where it is not contained in the tasks array returned from the query.
              */
             return [OCKSimpleTaskViewController(task: task,
                                                eventQuery: .init(for: date),
                                                storeManager: self.storeManager)]
 
-        // Create a card for the doxylamine task if there are events for it on this day.
-        case TaskID.doxylamine:
+        // Create a card for the dinner task if there are events for it on this day.
+        case .checklist:
 
             return [OCKChecklistTaskViewController(
                 task: task,
                 eventQuery: .init(for: date),
                 storeManager: self.storeManager)]
 
-        case TaskID.nausea:
+        case .button:
             var cards = [UIViewController]()
             // dynamic gradient colors
-            let nauseaGradientStart = UIColor { traitCollection -> UIColor in
+            let lunchGradientStart = UIColor { traitCollection -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? #colorLiteral(red: 0.06253327429, green: 0.6597633362, blue: 0.8644603491, alpha: 1) : #colorLiteral(red: 0, green: 0.2858072221, blue: 0.6897063851, alpha: 1)
             }
-            let nauseaGradientEnd = UIColor { traitCollection -> UIColor in
+            let lunchGradientEnd = UIColor { traitCollection -> UIColor in
                 return traitCollection.userInterfaceStyle == .light ? #colorLiteral(red: 0, green: 0.2858072221, blue: 0.6897063851, alpha: 1) : #colorLiteral(red: 0.06253327429, green: 0.6597633362, blue: 0.8644603491, alpha: 1)
             }
 
-            // Create a plot comparing nausea to medication adherence.
-            let nauseaDataSeries = OCKDataSeriesConfiguration(
-                taskID: "nausea",
-                legendTitle: "Nausea",
-                gradientStartColor: nauseaGradientStart,
-                gradientEndColor: nauseaGradientEnd,
+            // Create a plot comparing lunch to medication adherence.
+            let lunchDataSeries = OCKDataSeriesConfiguration(
+                taskID: TaskID.recovery,
+                legendTitle: "Lunch",
+                gradientStartColor: lunchGradientStart,
+                gradientEndColor: lunchGradientEnd,
                 markerSize: 10,
                 eventAggregator: OCKEventAggregator.countOutcomeValues)
 
-            let doxylamineDataSeries = OCKDataSeriesConfiguration(
-                taskID: "doxylamine",
-                legendTitle: "Doxylamine",
+            let dinnerDataSeries = OCKDataSeriesConfiguration(
+                taskID: TaskID.sleep,
+                legendTitle: "Dinner",
                 gradientStartColor: .systemGray2,
                 gradientEndColor: .systemGray,
                 markerSize: 10,
@@ -235,12 +253,12 @@ class CareViewController: OCKDailyPageViewController {
             let insightsCard = OCKCartesianChartViewController(
                 plotType: .bar,
                 selectedDate: date,
-                configurations: [nauseaDataSeries, doxylamineDataSeries],
+                configurations: [lunchDataSeries, dinnerDataSeries],
                 storeManager: self.storeManager)
 
-            insightsCard.chartView.headerView.titleLabel.text = "Nausea & Doxylamine Intake"
+            insightsCard.chartView.headerView.titleLabel.text = "Lunch & Dinner menu"
             insightsCard.chartView.headerView.detailLabel.text = "This Week"
-            insightsCard.chartView.headerView.accessibilityLabel = "Nausea & Doxylamine Intake, This Week"
+            insightsCard.chartView.headerView.accessibilityLabel = "Lunch & Dinner, This Week"
             cards.append(insightsCard)
 
             /*
@@ -248,14 +266,42 @@ class CareViewController: OCKDailyPageViewController {
              The event query passed into the initializer specifies that only
              today's log entries should be displayed by this log task view controller.
              */
-            let nauseaCard = OCKButtonLogTaskViewController(task: task,
+            let lunchCard = OCKButtonLogTaskViewController(task: task,
                                                             eventQuery: .init(for: date),
                                                             storeManager: self.storeManager)
-            cards.append(nauseaCard)
+            cards.append(lunchCard)
             return cards
+        case .labeledValue:
+            let view = LabeledValueTaskView(
+                task: task,
+                eventQuery: OCKEventQuery(for: date),
+                storeManager: self.storeManager)
+                .padding([.vertical], 20)
+                .careKitStyle(CustomStylerKey.defaultValue)
 
+            return [view.formattedHostingController()]
+
+        case .link:
+            let linkView = LinkView(title: .init("SAD detox"),
+                                    // swiftlint:disable:next line_length
+                                    links: [.website("http://www.engr.uky.edu/research-faculty/departments/computer-science",
+                                                     title: "College of Engineering")])
+            return [linkView.formattedHostingController()]
         default:
-            return nil
+            // Check if a healthKit task
+            guard task is OCKHealthKitTask else {
+                return [OCKSimpleTaskViewController(task: task,
+                                                    eventQuery: .init(for: date),
+                                                    storeManager: self.storeManager)]
+            }
+            let view = LabeledValueTaskView(
+                task: task,
+                eventQuery: OCKEventQuery(for: date),
+                storeManager: self.storeManager)
+                .padding([.vertical], 20)
+                .careKitStyle(CustomStylerKey.defaultValue)
+
+            return [view.formattedHostingController()]
         }
     }
 
@@ -263,12 +309,9 @@ class CareViewController: OCKDailyPageViewController {
         var query = OCKTaskQuery(for: date)
         query.excludesTasksWithNoEvents = true
         do {
-            let tasks = try await storeManager.store.fetchAnyTasks(query: query)
-            let orderedTasks = TaskID.ordered.compactMap { orderedTaskID in
-                tasks.first(where: { $0.id == orderedTaskID }) }
-            return orderedTasks
+            return try await storeManager.store.fetchAnyTasks(query: query)
         } catch {
-            Logger.feed.error("\(error.localizedDescription, privacy: .public)")
+            Logger.feed.error("\(error, privacy: .public)")
             return []
         }
     }

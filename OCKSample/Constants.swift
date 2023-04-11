@@ -74,25 +74,56 @@ enum Constants {
     static let requestSync = "requestSync"
     static let progressUpdate = "progressUpdate"
     static let finishedAskingForPermission = "finishedAskingForPermission"
-    static let completedFirstSyncAfterLogin = "completedFirstSyncAfterLogin"
+    static let shouldRefreshView = "shouldRefreshView"
+    // static let completedFirstSyncAfterLogin = "completedFirstSyncAfterLogin"
     static let userLoggedIn = "userLoggedIn"
     static let storeInitialized = "storeInitialized"
     static let userTypeKey = "userType"
+    static let dietTypeKey = "dietType"
+    static let card = "card"
+    static let survey = "survey"
 }
 
 enum MainViewPath {
     case tabs
 }
 
+enum CareKitCard: String, CaseIterable, Identifiable {
+    var id: Self { self }
+    case button = "Button"
+    case checklist = "Checklist"
+    case featured = "Featured"
+    case grid = "Grid"
+    case instruction = "Instruction"
+    case labeledValue = "Labeled Value"
+    case link = "Link"
+    case numericProgress = "Numeric Progress"
+    case simple = "Simple"
+    case survey = "Survey"
+    case custom = "Custom"
+}
+
+enum CarePlanID: String, CaseIterable, Identifiable {
+    var id: Self { self }
+    case health // Add custom id's for your Care Plans, these are examples
+    case checkIn
+    case fruit
+    case veggies
+    case mushroom
+}
+
 enum TaskID {
-    static let doxylamine = "doxylamine"
-    static let nausea = "nausea"
-    static let stretch = "stretch"
-    static let kegels = "kegels"
+    static let dinner = "dinner"
+    static let lunch = "lunch"
+    static let sleep = "sleep"
+    static let water = "water"
     static let steps = "steps"
+    // new added
+    static let recovery = "recovery"
+    static let rest = "rest"
 
     static var ordered: [String] {
-        [Self.steps, Self.doxylamine, Self.kegels, Self.stretch, Self.nausea]
+        [Self.recovery, Self.rest, Self.water, Self.sleep, Self.lunch]
     }
 }
 
@@ -109,4 +140,9 @@ enum UserType: String, Codable {
 
 enum InstallationChannel: String {
     case global
+}
+
+enum TaskType: String, CaseIterable, Identifiable {
+    case task, healthKitTask
+    var id: String { self.rawValue }
 }
