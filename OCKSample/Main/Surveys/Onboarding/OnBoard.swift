@@ -26,9 +26,9 @@ extension Onboard {
             identifier: "\(identifier()).welcome"
         )
 
-        welcomeInstructionStep.title = "Welcome!"
+        welcomeInstructionStep.title = "Welcome to SADetox !"
         welcomeInstructionStep.detailText = "Thank you for joining our study. Tap Next to learn more before signing up."
-        welcomeInstructionStep.image = UIImage(named: "welcome-image")
+        welcomeInstructionStep.image = UIImage(named: "welcome")
         welcomeInstructionStep.imageContentMode = .scaleAspectFill
 
         // The Informed Consent Instruction step.
@@ -40,7 +40,7 @@ extension Onboard {
         studyOverviewInstructionStep.iconImage = UIImage(systemName: "checkmark.seal.fill")
 
         let heartBodyItem = ORKBodyItem(
-            text: "The study will ask you to share some of your health data.",
+            text: "SADetox will ask you to share some of your health data.",
             detailText: nil,
             image: UIImage(systemName: "heart.fill"),
             learnMoreItem: nil,

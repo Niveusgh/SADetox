@@ -581,6 +581,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E33B50282A0410BE005B07B5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		E373BC3E29E5E2510092839F /* MyContact */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +644,7 @@
 		E72B2BFD226939E3009A9438 = {
 			isa = PBXGroup;
 			children = (
+				E33B50282A0410BE005B07B5 /* Images */,
 				9169381F271B80EA00A634ED /* CONTRIBUTING.md */,
 				91AD922324A461D200925D4D /* README.md */,
 				0520468223C3C1F2004F0F36 /* OCKSample.xctestplan */,

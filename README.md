@@ -22,6 +22,29 @@ The app is ideal for:
 **Use at your own risk. There is no promise that this is HIPAA compliant and we are not responsible for any mishandling of your data**
 
 
+## Application Demo
+#### Startup & Onboarding Screens
+<img width="175" alt="1" src="https://user-images.githubusercontent.com/112659162/207221043-51c4ded9-b01c-44f6-bd1e-8bedf654c209.png"><img width="175" alt="2" src="https://user-images.githubusercontent.com/112659162/207221216-fa347222-1679-4f11-9292-b28835ac7cc8.png"><img width="175" alt="3" src="https://user-images.githubusercontent.com/112659162/207221230-154ba3ad-53cd-4ed8-9425-087aac202af2.png">
+
+#### Homescreen
+<img width="175" alt="4" src="https://user-images.githubusercontent.com/112659162/207221259-4b5de7e9-0cee-43cb-bb06-92be3d83ed5c.png"><img width="175" alt="5" src="https://user-images.githubusercontent.com/112659162/207221266-3ee1b0b9-ecf3-42f6-a8f0-23aad41db7da.png"><img width="175" alt="6" src="https://user-images.githubusercontent.com/112659162/207221272-d6cbed7f-642a-400f-b509-f8e4f89aa335.png"><img width="175" alt="7" src="https://user-images.githubusercontent.com/112659162/207221278-c500a568-5ae2-4e99-8b88-44ab9d5ffc40.png">
+
+#### Workout Setup Survey
+<img width="175" alt="8" src="https://user-images.githubusercontent.com/112659162/207221306-65694fba-c822-4ce0-87cc-be0416cdb082.png"><img width="175" alt="9" src="https://user-images.githubusercontent.com/112659162/207221316-f52ad933-23fa-46ae-9d0f-6bf504f0a4d4.png">
+
+#### Check In Survey
+<img width="175" alt="10" src="https://user-images.githubusercontent.com/112659162/207221369-e772b37b-b0f1-4564-87c6-ae91ce8965a5.png">
+
+#### Insights View
+<img width="175" alt="11" src="https://user-images.githubusercontent.com/112659162/207221372-64ec0742-cb44-4bc8-b339-90451d76ef91.png">
+
+#### Profile & Contact View
+<img width="175" alt="12" src="https://user-images.githubusercontent.com/112659162/207221409-a96102cf-318e-4059-a2b2-1aad371d4d1f.png"><img width="175" alt="13" src="https://user-images.githubusercontent.com/112659162/207221416-33de707f-6260-42a8-99c5-bc0ffc2ec366.png">
+
+#### Add Task View
+<img width="175" alt="14" src="https://user-images.githubusercontent.com/112659162/207221431-0c9002ca-b67b-465b-9f93-524e8288b6a0.png">
+
+
 ### Developed by:
 - Thea Francis(https://github.com/Niveusgh) - University of Kentucky, Computer Science
 

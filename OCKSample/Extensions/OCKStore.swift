@@ -192,7 +192,7 @@ extension OCKStore {
 
         var rangeOfMotionTask = OCKTask(
             id: RangeOfMotion.identifier(),
-            title: "Range Of Motion",
+            title: "Diet Preference Survey", //"Range of"
             carePlanUUID: carePlanUUID,
             schedule: rangeOfMotionCheckSchedule
         )

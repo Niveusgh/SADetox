@@ -169,11 +169,11 @@ class CareViewController: OCKDailyPageViewController {
                     let tipText = "Learn how WFPD can promote health."
                     let customFeaturedView = CustomFeaturedContentView()
                     // swiftlint:disable:next line_length
-                    customFeaturedView.url = URL(string: "https://www.youtube.com/playlist?list=PLp4G6oBUcv8yGQifkb4p_ZOoACPnYslx9")
+                    customFeaturedView.url = URL(string: "https://youtube.com/playlist?list=PL5TLzNi5fYd-CDdPTroYvXeVUk-eO5oaj")
                     let tipView = TipView()
                     tipView.headerView.titleLabel.text = tipTitle
                     tipView.headerView.detailLabel.text = tipText
-                    tipView.imageView.image = UIImage(named: "logo.jpg")
+                    tipView.imageView.image = UIImage(named: "header.jpg")
                     tipView.customStyle = CustomStylerKey.defaultValue
                     listViewController.appendView(tipView, animated: false)
                 }

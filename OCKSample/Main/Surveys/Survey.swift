@@ -4,7 +4,7 @@
 //
 //  Created by Corey Baker on 4/13/23.
 //  Copyright © 2023 Network Reconnaissance Lab. All rights reserved.
-//
+// 
 
 import Foundation
 import CareKitStore
@@ -16,7 +16,7 @@ enum Survey: String, CaseIterable, Identifiable {
     var id: Self { self }
     case onboard = "Onboard"
     case checkIn = "Check In"
-    case rangeOfMotion = "Range of Motion"
+    case rangeOfMotion = "Diet Preference Survey"
     case dietSetup = "Diet Setup"
 
     func type() -> Surveyable {

@@ -12,9 +12,9 @@ import SwiftUI
 struct TintColorKey: EnvironmentKey {
     static var defaultValue: UIColor {
         #if os(iOS)
-        return UIColor { $0.userInterfaceStyle == .light ?  #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1) : #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1) }
+        return UIColor { $0.userInterfaceStyle == .light ?  #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1) : #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1) }
         #else
-        return #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        return #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         #endif
 
     }

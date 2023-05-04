@@ -45,8 +45,8 @@ final class SurveyViewSynchronizer: OCKSurveyTaskViewSynchronizer {
                 let range = event.answer(kind: RangeOfMotion.rangeIdentifier)
 
                 view.instructionsLabel.text = """
-                    Range of motion: \(Int(range))
-                    """
+                    Diet Preference Survey: \(Int(range))
+                    """ // Range of motion
             case "onboard":
                 view.instructionsLabel.text = """
                     Please complete to begin using the application.
