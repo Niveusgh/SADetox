@@ -1,14 +1,66 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-f4981d0f882b2a3f0472912d15f9806d57e124e0fc890972558857b51b24a6f9.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=10317570)
-# CareKitSample+ParseCareKit
-![Swift](https://img.shields.io/badge/swift-5.7-brightgreen.svg) ![Xcode 14.0+](https://img.shields.io/badge/xcode-14.0%2B-blue.svg) ![iOS 16.0+](https://img.shields.io/badge/iOS-16.0%2B-blue.svg) ![watchOS 9.0+](https://img.shields.io/badge/watchOS-9.0%2B-blue.svg) ![CareKit 2.1+](https://img.shields.io/badge/CareKit-2.1%2B-red.svg) ![ci](https://github.com/netreconlab/CareKitSample-ParseCareKit/workflows/ci/badge.svg?branch=main)
+<!-- SADdetox -->
+
+# SADdetox App
+![Swift](https://img.shields.io/badge/swift-5.5-brightgreen.svg) ![Xcode 14.2+](https://img.shields.io/badge/xcode-13.2%2B-blue.svg) ![iOS 15.0+](https://img.shields.io/badge/iOS-15.0%2B-blue.svg) ![watchOS 8.0+](https://img.shields.io/badge/watchOS-8.0%2B-blue.svg) ![CareKit 2.1+](https://img.shields.io/badge/CareKit-2.1%2B-red.svg) ![ci](https://github.com/netreconlab/CareKitSample-ParseCareKit/workflows/ci/badge.svg?branch=main)
+
+## Description
+
+SADdetox App is a comprehensive solution for individuals interested in adopting a vegan, whole-food plant-based (WFPB) lifestyle. The app provides information about the benefits of a vegan, WFPB diet, tips for getting started, meal plans, recipes, and exercise tracking. Users can also log their dietary habits, water intake, and overall well-being through check-in surveys. The app features an "Insights" tab that displays graphs and statistics related to users' dietary habits and exercise.
+
+
+## Designed for Users
+SADdetox is an app specifically designed for individuals who are currently following a SAD diet and are interested in transitioning to a healthier, whole-food plant-based (WFPB) lifestyle. The app is suitable for users of all ages and backgrounds who want to improve their overall health and well-being by adopting a diet that is rich in whole, plant-based foods and low in processed and animal-based products.
+
+The app is ideal for:
+- Individuals who are concerned about the health risks associated with a standard American diet, such as obesity, heart disease, diabetes, and certain cancers.
+- People who want to make more ethical and environmentally friendly food choices by reducing their consumption of animal products.
+- Users who are looking for guidance, support, and resources to help them successfully transition to a WFPB diet.
+- Those who want to discover delicious and nutritious plant-based recipes that align with their health goals.
+- Individuals who are interested in tracking their dietary habits, physical activity, and health progress as they embark on their WFPB journey.
+
+
+**Use at your own risk. There is no promise that this is HIPAA compliant and we are not responsible for any mishandling of your data**
+
+
+### Developed by:
+- Thea Francis(https://github.com/Niveusgh) - University of Kentucky, Computer Science
+
+There is no promise that this is HIPAA compliant and we are not responsible for any mishandling of your data
+
+### Contributions/Features:
+- CustomFeaturedContentView that provides information about the benefits of a vegan, WFPB diet and tips for getting started.
+- A check-in Research Kit survey that asks users about their dietary habits, energy levels, and overall well-being.
+- OCKTask type of food displayed by OCKChecklistTaskViewController to remind users to have any necessary food categories.
+- OCKTask diet displayed by OCKButtonLogTaskViewController to encourage users to stay hydrated throughout the day.
+- OCKTask meal plan displayed by OCKGridTaskViewController to help users plan and track their meals according to WFPB guidelines.
+- - Personalized Detox Plan: SADdetox creates a customized detox plan for each user based on their dietary preferences, health goals, and current eating habits. The plan includes meal recommendations, portion sizes, and a schedule to help users gradually reduce their intake of processed and unhealthy foods.
+- LinkViews for easy access to vegan recipes, cooking tutorials, and meal plans.
+- Progress Tracking: Users can track their progress throughout the detox process by logging their meals, physical activity, and health metrics such as weight, energy levels, and mood. The app provides visualizations and insights to help users understand the positive impact of their dietary changes.
+- Improved styling and custom logo.
+SADdetox is a holistic solution that empowers users to take control of their health and break free from the SAD diet. 
+
+### Wishlist features:
+- Integration of a grocery list feature that automatically generates shopping lists based on users' meal plans.
+- A community forum where users can share recipes, tips, and experiences related to the vegan, WFPB lifestyle.
+- Integration with health tracking devices (e.g., fitness trackers, smartwatches) to automatically log exercise and other health data.
+
+### Challenges faced while developing:
+Learning Swift and the MVVM architectural pattern was a significant challenge, as I had no prior experience with either. Understanding how to use CareKit and ResearchKit frameworks to create various health-related tasks and surveys also required a steep learning curve. Additionally, tailoring the app to focus on the vegan, WFPB diet and ensuring that the provided meal plans and recipes adhere to the principles of this diet was a complex task.
+
+To overcome these challenges, I spent time studying Swift programming, the MVVM pattern, and the documentation for CareKit and ResearchKit. I also conducted research on the vegan, WFPB diet to ensure that the app's content is accurate and beneficial to users. Through trial and error, I was able to implement the desired features and create an app that provides a comprehensive solution for individuals interested in adopting a vegan, WFPB lifestyle.
+
+### Demo Video
+To learn more about this application, watch the video below:
+
+<ahref="https://youtube.com/playlist?list=PLwt79iF545WRLaxgOCsLaAihGgVnorjak" target="_blank"><img src="http://img.youtube.com/vi/NEW_VIDEO_ID/0.jpg" 
+alt="SADdetox Demo Video" width="240" height="180" border="10" /></a>
+
+## CareKitSample+ParseCareKit
 
 An example application of [CareKit](https://github.com/carekit-apple/CareKit)'s OCKSample synchronizing CareKit data to the Cloud via [ParseCareKit](https://github.com/netreconlab/ParseCareKit).
 
 <img src="https://user-images.githubusercontent.com/8621344/101721031-06869500-3a75-11eb-9631-88927e9c8f00.png" width="300"> <img src="https://user-images.githubusercontent.com/8621344/101721111-33d34300-3a75-11eb-885e-4a6fc96dbd35.png" width="300"> <img src="https://user-images.githubusercontent.com/8621344/101721146-48afd680-3a75-11eb-955a-7848146a9d6f.png" width="300"><img src="https://user-images.githubusercontent.com/8621344/101721182-5cf3d380-3a75-11eb-99c9-bde40477acf3.png" width="300">
 
-**Similar to the [What's New in CareKit](https://developer.apple.com/videos/play/wwdc2020/10151/) WWDC20 video, this app syncs between the AppleWatch (setting the flag `isSyncingWithCloud` in `Constants.swift` to  `isSyncingWithCloud = false`. Different from the video, setting `isSyncingWithCloud = true` (default behavior) in the aforementioned files syncs iOS and watchOS to a Parse Server.**
-
-ParseCareKit synchronizes the following entities to Parse tables/classes using [Parse-Swift](https://github.com/netreconlab/Parse-Swift):
 
 - [x] OCKTask <-> Task
 - [x] OCKHealthKitTask <-> HealthKitTask 
@@ -18,7 +70,9 @@ ParseCareKit synchronizes the following entities to Parse tables/classes using [
 - [x] OCKCarePlan <-> CarePlan
 - [x] OCKContact <-> Contact
 
-**Use at your own risk. There is no promise that this is HIPAA compliant and we are not responsible for any mishandling of your data**
+**Similar to the [What's New in CareKit](https://developer.apple.com/videos/play/wwdc2020/10151/) WWDC20 video, this app syncs between the AppleWatch (setting the flag `isSyncingWithCloud` in `Constants.swift` to  `isSyncingWithCloud = false`. Different from the video, setting `isSyncingWithCloud = true` (default behavior) in the aforementioned files syncs iOS and watchOS to a Parse Server.**
+
+ParseCareKit synchronizes the following entities to Parse tables/classes using [Parse-Swift](https://github.com/netreconlab/Parse-Swift):
 
 ## Setup Your Parse Server
 

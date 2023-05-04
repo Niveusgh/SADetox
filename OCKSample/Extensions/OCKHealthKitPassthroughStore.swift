@@ -42,14 +42,18 @@ extension OCKHealthKitPassthroughStore {
         }
     }
 
-    func populateSampleData() async throws {
+    func populateSampleData(_ patientUUID: UUID? = nil) async throws {
+
+        _ = try await OCKStore.getCarePlanUUIDs()
+
+        var tasks = [OCKHealthKitTask]()
 
         let schedule = OCKSchedule.dailyAtTime(
             hour: 8, minutes: 0, start: Date(), end: nil, text: nil,
             duration: .hours(12), targetValues: [OCKOutcomeValue(2000.0, units: "Steps")])
 
         var steps = OCKHealthKitTask(
-            id: TaskID.steps,
+            id: TaskID.lunch,
             title: "Steps",
             carePlanUUID: nil,
             schedule: schedule,
@@ -58,7 +62,30 @@ extension OCKHealthKitPassthroughStore {
                 quantityType: .cumulative,
                 unit: .count()))
         steps.asset = "figure.walk"
-        steps.card = .numericProgress
+
+        var mealLinks = OCKHealthKitTask(
+            id: TaskID.mealLinks,
+            title: "mealLinks",
+            carePlanUUID: nil,
+            schedule: schedule,
+            healthKitLinkage: OCKHealthKitLinkage(
+                quantityIdentifier: .stepCount,
+                quantityType: .cumulative,
+                unit: .count()))
+        mealLinks.asset = "figure.meals"
+
+        var workoutLinks = OCKHealthKitTask(
+            id: TaskID.workoutLinks,
+            title: "workoutLinks",
+            carePlanUUID: nil,
+            schedule: schedule,
+            healthKitLinkage: OCKHealthKitLinkage(
+                quantityIdentifier: .stepCount,
+                quantityType: .cumulative,
+                unit: .count()))
+        workoutLinks.asset = "figure.workout"
+
+        tasks.append(contentsOf: [steps, mealLinks, workoutLinks])
         try await addTasksIfNotPresent([steps])
     }
 }

@@ -5,4 +5,5 @@ disabled_rules:
   - weak_delegate
   - file_length
   - function_body_length
-
+  - type_body_length
+  - blanket_disable_command

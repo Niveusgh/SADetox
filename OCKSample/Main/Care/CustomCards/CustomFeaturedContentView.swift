@@ -2,14 +2,13 @@
 //  CustomFeaturedContentView.swift
 //  OCKSample
 //
-//  Created by Thea He on 3/30/23.
+//  Created by Corey Baker on 4/25/23.
 //  Copyright © 2023 Network Reconnaissance Lab. All rights reserved.
 //
 
 import UIKit
 import CareKit
 import CareKitUI
-import SwiftUI
 
 /// A simple subclass to take control of what CareKit already gives us.
 class CustomFeaturedContentView: OCKFeaturedContentView {
@@ -22,11 +21,17 @@ class CustomFeaturedContentView: OCKFeaturedContentView {
 
         self.delegate = self
     }
-
+    // swiftlint:disable todo
+    /*
+     TODO: 4 - Modify this init to take: UIImage, a text string , and text color.
+     The initialize should set all of the respective properties.
+     */
     // A convenience initializer to make it easier to use our custom featured content
     convenience init(url: String, imageOverlayStyle: UIUserInterfaceStyle = .unspecified) {
         self.init(imageOverlayStyle: imageOverlayStyle)
+        // TODO: 2 - Need to call the designated initializer
         self.url = URL(string: url)
+        // TODO: 3 - Need to turn the url string into a real URL using URL(string: String)
     }
 }
 

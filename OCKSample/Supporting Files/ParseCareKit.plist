@@ -2,15 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ApplicationID</key>
-	<string>d35032693435a87f2a630a38e9aaf00d64cdb2c8d62bbf78baf1ca70f069477a</string>
-	<key>Server</key>
-	<string>https://okc3.herokuapp.com/parse</string>
-	<key>LiveQueryServer</key>
-	<string></string>
-	<key>UseTransactions</key>
-	<false/>
-	<key>DeleteKeychainIfNeeded</key>
-	<true/>
+    <key>ApplicationID</key>
+    <string>d35032693435a87f2a630a38e9aaf00d64cdb2c8d62bbf78baf1ca70f069477a</string>
+    <key>Server</key>
+    <string>https://okc3.herokuapp.com/parse</string>
+    <key>LiveQueryServer</key>
+    <string></string>
+    <key>UseTransactions</key>
+    <false/>
+    <key>DeleteKeychainIfNeeded</key>
+    <true/>
 </dict>
 </plist>

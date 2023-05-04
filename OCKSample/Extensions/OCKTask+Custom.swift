@@ -1,16 +1,15 @@
 //
-//  OCKTask.swift
+//  OCKTask+Custom.swift
 //  OCKSample
 //
 //  Created by Thea He on 3/30/23.
 //  Copyright © 2023 Network Reconnaissance Lab. All rights reserved.
 //
+
 import Foundation
 import CareKitStore
 
 extension OCKTask {
-
-    /// the actual CareKit card for this task
     var card: CareKitCard {
         get {
             guard let cardInfo = userInfo?[Constants.card],
@@ -26,6 +25,24 @@ extension OCKTask {
             }
             // Set the new card type
             userInfo?[Constants.card] = newValue.rawValue
+        }
+    }
+
+    var survey: Survey {
+        get {
+            guard let surveyInfo = userInfo?[Constants.survey],
+                  let surveyType = Survey(rawValue: surveyInfo) else {
+                return .checkIn // Default survey if none was saved
+            }
+            return surveyType // Saved survey type
+        }
+        set {
+            if userInfo == nil {
+                // Initialize userInfo with empty dictionary
+                userInfo = .init()
+            }
+            // Set the new card type
+            userInfo?[Constants.survey] = newValue.rawValue
         }
     }
 }
